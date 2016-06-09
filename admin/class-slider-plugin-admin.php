@@ -13,7 +13,7 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @author     Your Name <email@example.com>
+ * @author     Your Name <marchalyoan@gmail.com>
  */
 class slider_plugin_Admin
 {

@@ -29,6 +29,8 @@ Echo value
 
 
 == Changelog ==
+= 1.0.1 =
+Add author email.
 
 = 1.0 =
 Initial plugin.
