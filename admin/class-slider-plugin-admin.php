@@ -102,32 +102,30 @@ class slider_plugin_Admin
             wp_enqueue_script($this->slider_plugin, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
         }
 
+    public function homepage_slider()
+    {
+        $labels = [
+            'name'                => _x('Slides', 'Post Type General Name', 'slider-plugin'),
+            'singular_name'       => _x('Slide', 'Post Type Singular Name', 'slider-plugin'),
+            'menu_name'           => __('Homepage Slider', 'slider-plugin'),
+            'parent_item_colon'   => __('Parent Slide:', 'slider-plugin'),
+            'all_items'           => __('All Slides', 'slider-plugin'),
+            'view_item'           => __('View Slide', 'slider-plugin'),
+            'add_new_item'        => __('Add New Slide', 'slider-plugin'),
+            'add_new'             => __('New Slide', 'slider-plugin'),
+            'edit_item'           => __('Edit Slide', 'slider-plugin'),
+            'update_item'         => __('Update Slide', 'slider-plugin'),
+            'search_items'        => __('Search slides', 'slider-plugin'),
+            'not_found'           => __('No slides found', 'slider-plugin'),
+            'not_found_in_trash'  => __('No slides found in Trash', 'slider-plugin'),
+        ];
 
-
-    public function homepage_slider() {
-
-    	$labels = array(
-    		'name'                => _x( 'Slides', 'Post Type General Name', 'slider-plugin' ),
-            'singular_name'       => _x( 'Slide', 'Post Type Singular Name', 'slider-plugin' ),
-            'menu_name'           => __( 'Homepage Slider', 'slider-plugin' ),
-            'parent_item_colon'   => __( 'Parent Slide:', 'slider-plugin' ),
-            'all_items'           => __( 'All Slides', 'slider-plugin' ),
-            'view_item'           => __( 'View Slide', 'slider-plugin' ),
-            'add_new_item'        => __( 'Add New Slide', 'slider-plugin' ),
-            'add_new'             => __( 'New Slide', 'slider-plugin' ),
-            'edit_item'           => __( 'Edit Slide', 'slider-plugin' ),
-            'update_item'         => __( 'Update Slide', 'slider-plugin' ),
-            'search_items'        => __( 'Search slides', 'slider-plugin' ),
-            'not_found'           => __( 'No slides found', 'slider-plugin' ),
-            'not_found_in_trash'  => __( 'No slides found in Trash', 'slider-plugin' )
-        );
-
-        $args = array(
-            'label'               => __( 'homepage_slider', 'slider-plugin' ),
-            'description'         => __( 'Homepage Slides', 'slider-plugin' ),
+        $args = [
+            'label'               => __('homepage_slider', 'slider-plugin'),
+            'description'         => __('Homepage Slides', 'slider-plugin'),
             'labels'              => $labels,
-            'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields' ),
-            'taxonomies'          => array( 'category', 'post_tag' ),
+            'supports'            => ['title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'],
+            'taxonomies'          => ['category', 'post_tag'],
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,
@@ -140,8 +138,8 @@ class slider_plugin_Admin
             'has_archive'         => false,
             'exclude_from_search' => true,
             'publicly_queryable'  => true,
-            'capability_type'     => 'post'
-        );
-        register_post_type( 'homepage_slider', $args );
+            'capability_type'     => 'post',
+        ];
+        register_post_type('homepage_slider', $args);
     }
 }
