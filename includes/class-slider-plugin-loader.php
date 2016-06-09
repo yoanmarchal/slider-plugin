@@ -16,7 +16,7 @@
  *
  * @author     Your Name <email@example.com>
  */
-class Social_link_Loader
+class slider_plugin_Loader
 {
     /**
      * The array of actions registered with WordPress.

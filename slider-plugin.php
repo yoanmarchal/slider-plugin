@@ -12,7 +12,7 @@
  * @since             1.0.0
  *
  * @wordpress-plugin
- * Plugin Name:       Social link Plugin
+ * Plugin Name:       Slider plugin
  * Plugin URI:        http://example.com/social-link-uri/
  * Description:       Simple plugin for save && retrive social links
  * Version:           1.0.0
@@ -31,32 +31,32 @@ if (!defined('WPINC')) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-social-link-activator.php.
+ * This action is documented in includes/class-slider-plugin-activator.php.
  */
-function activate_plugin_name()
+function activate_slider_plugin()
 {
-    require_once plugin_dir_path(__FILE__).'includes/class-social-link-activator.php';
-    Social_link_Activator::activate();
+    require_once plugin_dir_path(__FILE__).'includes/class-slider-plugin-activator.php';
+    slider_plugin_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-social-link-deactivator.php.
+ * This action is documented in includes/class-slider-plugin-deactivator.php.
  */
-function deactivate_plugin_name()
+function deactivate_slider_plugin()
 {
-    require_once plugin_dir_path(__FILE__).'includes/class-social-link-deactivator.php';
-    Social_link_Deactivator::deactivate();
+    require_once plugin_dir_path(__FILE__).'includes/class-slider-plugin-deactivator.php';
+    slider_plugin_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_plugin_name');
-register_deactivation_hook(__FILE__, 'deactivate_plugin_name');
+register_activation_hook(__FILE__, 'activate_slider_plugin');
+register_deactivation_hook(__FILE__, 'deactivate_slider_plugin');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__).'includes/class-social-link.php';
+require plugin_dir_path(__FILE__).'includes/class-slider-plugin.php';
 
 /**
  * Begins execution of the plugin.
@@ -67,9 +67,9 @@ require plugin_dir_path(__FILE__).'includes/class-social-link.php';
  *
  * @since    1.0.0
  */
-function run_social_link()
+function run_slider_plugin()
 {
-    $plugin = new Social_link();
+    $plugin = new slider_plugin();
     $plugin->run();
 }
-run_social_link();
+run_slider_plugin();

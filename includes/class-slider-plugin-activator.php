@@ -16,7 +16,7 @@
  *
  * @author     Your Name <email@example.com>
  */
-class Social_link_Activator
+class slider_plugin_Activator
 {
     /**
      * Short Description. (use period).

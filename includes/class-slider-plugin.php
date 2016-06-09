@@ -23,7 +23,7 @@
  *
  * @author     Your Name <email@example.com>
  */
-class Social_link
+class slider_plugin
 {
     /**
      * The loader that's responsible for maintaining and registering all hooks that power
@@ -31,7 +31,7 @@ class Social_link
      *
      * @since    1.0.0
      *
-     * @var Social_link_Loader Maintains and registers all hooks for the plugin.
+     * @var slider_plugin_Loader Maintains and registers all hooks for the plugin.
      */
     protected $loader;
 
@@ -42,7 +42,7 @@ class Social_link
      *
      * @var string The string used to uniquely identify this plugin.
      */
-    protected $plugin_name;
+    protected $slider_plugin;
 
     /**
      * The current version of the plugin.
@@ -64,7 +64,7 @@ class Social_link
      */
     public function __construct()
     {
-        $this->plugin_name = 'social-link';
+        $this->slider_plugin = 'social-link';
         $this->version = '1.0.0';
 
         $this->load_dependencies();
@@ -78,10 +78,10 @@ class Social_link
      *
      * Include the following files that make up the plugin:
      *
-     * - Social_link_Loader. Orchestrates the hooks of the plugin.
-     * - Social_link_i18n. Defines internationalization functionality.
-     * - Social_link_Admin. Defines all hooks for the admin area.
-     * - Social_link_Public. Defines all hooks for the public side of the site.
+     * - slider_plugin_Loader. Orchestrates the hooks of the plugin.
+     * - slider_plugin_i18n. Defines internationalization functionality.
+     * - slider_plugin_Admin. Defines all hooks for the admin area.
+     * - slider_plugin_Public. Defines all hooks for the public side of the site.
      *
      * Create an instance of the loader which will be used to register the hooks
      * with WordPress.
@@ -95,39 +95,39 @@ class Social_link
          * The class responsible for orchestrating the actions and filters of the
          * core plugin.
          */
-        require_once plugin_dir_path(dirname(__FILE__)).'includes/class-social-link-loader.php';
+        require_once plugin_dir_path(dirname(__FILE__)).'includes/class-slider-plugin-loader.php';
 
         /**
          * The class responsible for defining internationalization functionality
          * of the plugin.
          */
-        require_once plugin_dir_path(dirname(__FILE__)).'includes/class-social-link-i18n.php';
+        require_once plugin_dir_path(dirname(__FILE__)).'includes/class-slider-plugin-i18n.php';
 
         /**
          * The class responsible for defining all actions that occur in the admin area.
          */
-        require_once plugin_dir_path(dirname(__FILE__)).'admin/class-social-link-admin.php';
+        require_once plugin_dir_path(dirname(__FILE__)).'admin/class-slider-plugin-admin.php';
 
         /**
          * The class responsible for defining all actions that occur in the public-facing
          * side of the site.
          */
-        require_once plugin_dir_path(dirname(__FILE__)).'public/class-social-link-public.php';
+        require_once plugin_dir_path(dirname(__FILE__)).'public/class-slider-plugin-public.php';
 
-        $this->loader = new Social_link_Loader();
+        $this->loader = new slider_plugin_Loader();
     }
 
     /**
      * Define the locale for this plugin for internationalization.
      *
-     * Uses the Social_link_i18n class in order to set the domain and to register the hook
+     * Uses the slider_plugin_i18n class in order to set the domain and to register the hook
      * with WordPress.
      *
      * @since    1.0.0
      */
     private function set_locale()
     {
-        $plugin_i18n = new Social_link_i18n();
+        $plugin_i18n = new slider_plugin_i18n();
 
         $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
     }
@@ -140,7 +140,7 @@ class Social_link
      */
     private function define_admin_hooks()
     {
-        $plugin_admin = new Social_link_Admin($this->get_plugin_name(), $this->get_version());
+        $plugin_admin = new slider_plugin_Admin($this->get_slider_plugin(), $this->get_version());
 
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
@@ -154,7 +154,7 @@ class Social_link
      */
     private function define_public_hooks()
     {
-        $plugin_public = new Social_link_Public($this->get_plugin_name(), $this->get_version());
+        $plugin_public = new slider_plugin_Public($this->get_slider_plugin(), $this->get_version());
 
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
@@ -178,9 +178,9 @@ class Social_link
      *
      * @return string The name of the plugin.
      */
-    public function get_plugin_name()
+    public function get_slider_plugin()
     {
-        return $this->plugin_name;
+        return $this->slider_plugin;
     }
 
     /**
@@ -188,7 +188,7 @@ class Social_link
      *
      * @since     1.0.0
      *
-     * @return Social_link_Loader Orchestrates the hooks of the plugin.
+     * @return slider_plugin_Loader Orchestrates the hooks of the plugin.
      */
     public function get_loader()
     {

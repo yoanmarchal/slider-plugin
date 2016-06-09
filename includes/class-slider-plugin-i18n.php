@@ -20,7 +20,7 @@
  *
  * @author     Your Name <email@example.com>
  */
-class Social_link_i18n
+class slider_plugin_i18n
 {
     /**
      * Load the plugin text domain for translation.
