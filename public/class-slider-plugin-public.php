@@ -41,7 +41,7 @@ class slider_plugin_Public
      * @since    1.0.0
      *
      * @param string $slider_plugin The name of the plugin.
-     * @param string $version     The version of this plugin.
+     * @param string $version       The version of this plugin.
      */
     public function __construct($slider_plugin, $version)
     {
