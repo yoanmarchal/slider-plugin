@@ -76,7 +76,7 @@ class slider_plugin_Admin
              * class.
              */
 
-            wp_enqueue_style($this->slider_plugin, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
+            wp_enqueue_style($this->slider_plugin, plugin_dir_url(__FILE__).'css/slider-plugin-admin.css', [], $this->version, 'all');
         }
 
         /**
@@ -99,7 +99,7 @@ class slider_plugin_Admin
              * class.
              */
 
-            wp_enqueue_script($this->slider_plugin, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
+            wp_enqueue_script($this->slider_plugin, plugin_dir_url(__FILE__).'js/slider-plugin-admin.js', ['jquery'], $this->version, false);
         }
 
     public function homepage_slider()
